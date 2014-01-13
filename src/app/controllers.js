@@ -13,9 +13,8 @@ controller('ToDoController', ['$scope', function($scope) {
         $scope.tasks.push({name: " ", done: false});
     }
 
-    $scope.deleteTask = function(task) {
-        task.done = true;
-        console.log($scope.tasks);
+    $scope.deleteTask = function(taskIndex) {
+        $scope.tasks.splice(taskIndex, 1);
     }
 
     $scope.filteredTasks = function () {
