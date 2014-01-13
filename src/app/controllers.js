@@ -20,6 +20,7 @@ controller('ToDoController', ['$scope', function($scope) {
 
     $scope.filteredTasks = function () {
         return $scope.tasks.map(function (task) {
+            console.log(task);
             if (!task.done)
                 return task;
         });
