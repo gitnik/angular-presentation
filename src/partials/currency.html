@@ -7,12 +7,12 @@
 
             <div class="pure-control-group">
                 <label for="eur">EUR: </label>
-                <input id="eur" type="text" ng-model="eur" placeholder="€" ng-keyup="calculate()" value="eur">
+                <input id="eur" type="text" ng-model="eur" placeholder="€" ng-keyup="calculate('usd')" value="eur">
             </div>
 
             <div class="pure-control-group">
                 <label for="usd">USD: </label>
-                <input id="usd" type="text" ng-model="usd" placeholder="$" ng-keyup="calculate()" value="usd">
+                <input id="usd" type="text" ng-model="usd" placeholder="$" ng-keyup="calculate('eur')" value="usd">
             </div>
         </fieldset>
     </form>

@@ -42,4 +42,12 @@ controller('CurrencyConverterController', ['$scope', 'CurrencyExchangeData', fun
             exchangeRate*Math.pow(10,4)
         )/Math.pow(10,4);
     }
+
+    $scope.calculate = function(currency) {
+        if(currency == 'usd') {
+            $scope.usd = $scope.eur * $scope.getExchangeRate();
+        } else if (currency == 'eur') {
+            $scope.eur = $scope.usd * parseFloat((1/$scope.getExchangeRate()));
+        }
+    }
 }]);
