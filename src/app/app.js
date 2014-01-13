@@ -1,4 +1,4 @@
-angular.module('SampleApp', ['SampleApp.services', 'SampleApp.filters', 'SampleApp.controllers', 'ngRoute']).
+angular.module('SampleApp', ['SampleApp.factories', 'SampleApp.filters', 'SampleApp.controllers', 'ngRoute']).
 config(['$routeProvider', function ($routeProvider) {
     $routeProvider.when('/index', { templateUrl: 'partials/index.html', controller: 'NavBarController' });
     $routeProvider.when('/dummy-link-1', { templateUrl: 'partials/todo.html', controller: 'ToDoController' });

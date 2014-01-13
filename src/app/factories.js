@@ -1,7 +1,9 @@
-angular.module('SampleApp.services', []).
-service('ToDoItems',['$http', '$q', function($http, $q) {
+angular.module('SampleApp.factories', []).
+factory('ToDoItems',['$http', '$q', function($http, $q) {
 
-    var getAll = function() {
+    var factory = {};
+
+    factory.getAll = function() {
 
         var deffered = $q.defer();
 
@@ -11,10 +13,14 @@ service('ToDoItems',['$http', '$q', function($http, $q) {
 
         return deffered.promise;
     }
-}]).
-service('CurrencyExchangeData', ['$http', '$q', function($http, $q) {
 
-    var getData = function() {
+    return factory;
+}]).
+factory('CurrencyExchangeData', ['$http', '$q', function($http, $q) {
+
+    var factory = {};
+
+    factory.getData = function() {
 
         var deffered = $q.defer();
 
@@ -24,4 +30,6 @@ service('CurrencyExchangeData', ['$http', '$q', function($http, $q) {
 
         return deffered.promise;
     }
+
+    return factory;
 }]);
