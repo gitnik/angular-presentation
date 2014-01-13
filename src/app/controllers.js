@@ -26,27 +26,28 @@ controller('ToDoController', ['$scope', 'ToDoItems', function($scope, ToDoItems)
 }]).
 controller('CurrencyConverterController', ['$scope', 'CurrencyExchangeData', function($scope, CurrencyExchangeData) {
 
+    var self = this;
 
     var ratePromise = CurrencyExchangeData.getData();
     ratePromise.then(function(data) {
         $scope.exchangeData = data;
 
         $scope.usd = 1;
-        $scope.eur = this.round($scope.usd * $scope.getExchangeRate(), 4);
+        $scope.eur = self.round($scope.usd * $scope.getExchangeRate(), 4);
     })
 
     $scope.getExchangeRate = function() {
         var exchangeRate = $scope.exchangeData.rate;
 
         // round to the 4th decimal
-        return this.round(exchangeRate, 4);
+        return self.round(exchangeRate, 4);
     }
 
     $scope.calculate = function(currency) {
         if(currency == 'usd') {
-            $scope.usd = this.round($scope.eur * parseFloat((1/$scope.getExchangeRate())), 4);
+            $scope.usd = self.round($scope.eur * parseFloat((1/$scope.getExchangeRate())), 4);
         } else if (currency == 'eur') {
-            $scope.eur = this.round($scope.usd * $scope.getExchangeRate(), 4);
+            $scope.eur = self.round($scope.usd * $scope.getExchangeRate(), 4);
         }
     }
 
