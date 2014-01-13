@@ -23,7 +23,7 @@ controller('ToDoController', ['$scope', '$http', function($scope, $http) {
         });
     }
 }]).
-controller('CurrencyConverterController', ['$scope', function($scope) {
+controller('CurrencyConverterController', ['$scope', '$http', function($scope, $http) {
 
     var that = this;
 
