@@ -1,4 +1,4 @@
-angular.module('SampleApp.controllers').
+angular.module('SampleApp.controllers', []).
 controller('NavBarController', ['$scope', function($scope) {
     $scope.name = "dummy";
 }]).
