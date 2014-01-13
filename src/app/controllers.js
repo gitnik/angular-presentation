@@ -2,7 +2,7 @@ angular.module('SampleApp.controllers', []).
 controller('NavBarController', ['$scope', function($scope) {
     $scope.name = "dummy";
 }]).
-controller('ToDoController', ['$scope', function($scope) {
+controller('ToDoController', ['$scope', '$http', function($scope, $http) {
 
     $http.get('app/tasks.json').success(function(data) {
         $scope.tasks = data;
