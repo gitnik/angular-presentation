@@ -2,11 +2,12 @@ angular.module('SampleApp.controllers', []).
 controller('NavBarController', ['$scope', function($scope) {
     $scope.name = "dummy";
 }]).
-controller('ToDoController', ['$scope', '$http', function($scope, $http) {
+controller('ToDoController', ['$scope', 'ToDoItems', function($scope, ToDoItems) {
 
-    $http.get('app/tasks.json').success(function(data) {
-        $scope.tasks = data;
-    });;
+    var ToDoItemsPromise = ToDoItems.getAll();
+    ToDoItemsPromise.then(function(tasks) {
+        $scope.tasks = tasks;
+    })
 
     $scope.addNewTask = function() {
         $scope.tasks.push({name: " ", done: false});
@@ -23,20 +24,15 @@ controller('ToDoController', ['$scope', '$http', function($scope, $http) {
         });
     }
 }]).
-controller('CurrencyConverterController', ['$scope', '$http', function($scope, $http) {
+controller('CurrencyConverterController', ['$scope', 'CurrencyExchangeData', function($scope, CurrencyExchangeData) {
 
-    var that = this;
-
-    var exchangeData = {};
-
-    $http.get("http://rate-exchange.appspot.com/currency?from=USD&to=EUR").
-        success(function(data) {
-            that.exchangeData = JSON.parse("'" + data + "'");
-        }
-    );
+    var ratePromise = CurrencyExchangeData.get();
+    ratePromise.then(function(data) {
+        $scope.exchangeData = data;
+    })
 
     $scope.getExchangeRate = function() {
-        var exchangeRate = that.exchangeData.rate;
+        var exchangeRate = $scope.exchangeData.rate;
 
         // round to the 4th decimal
         return Math.round(
