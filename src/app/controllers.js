@@ -31,7 +31,7 @@ controller('CurrencyConverterController', ['$scope', '$http', function($scope, $
 
     $http.get("http://rate-exchange.appspot.com/currency?from=USD&to=EUR").
         success(function(data) {
-            that.exchangeData = JSON.parse(data);
+            that.exchangeData = JSON.parse("'" + data + "'");
         }
     );
 
