@@ -1,7 +1,7 @@
 angular.module('SampleApp.controllers', []).
-controller('NavBarController', function($scope) {
+controller('NavBarController', ['$scope', function($scope) {
     $scope.name = "dummy";
-}).
+}]).
 controller('ToDoController', function($scope) {
 
 }).
