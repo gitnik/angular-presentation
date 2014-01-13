@@ -1,6 +1,10 @@
 <div class="currency-converter">
     <form class="pure-form pure-form-aligned">
         <fieldset>
+            <legend>Super handy Currency Converter!</legend>
+
+            <div>Current exchange rate: 1 USD = {{ getExchangeRate() }} EUR}</div>
+
             <div class="pure-control-group">
                 <label for="eur">EUR: </label>
                 <input id="eur" type="text" placeholder="€">

@@ -25,4 +25,22 @@ controller('ToDoController', ['$scope', '$http', function($scope, $http) {
 }]).
 controller('CurrencyConverterController', ['$scope', function($scope) {
 
+    var that = this;
+
+    var exchangeData = {};
+
+    $http.get("http://rate-exchange.appspot.com/currency?from=USD&to=EUR").
+        success(function(data) {
+            that.exchangeData = JSON.parse(data);
+        }
+    );
+
+    $scope.getExchangeRate = function() {
+        var exchangeRate = that.exchangeData[rate];
+
+        // round to the 4th decimal
+        return Math.round(
+            exchangeRate*Math.pow(10,4)
+        )/Math.pow(10,4);
+    }
 }]);
