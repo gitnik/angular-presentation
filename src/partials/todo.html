@@ -5,7 +5,7 @@
 
             <div>{{ tasks.length }} tasks</div>
 
-            <div ng-repeat="task in tasks">
+            <div ng-repeat="task in tasks track by $id(task)">
                 <input type="text" placeholder="{{ task }}"><button type="submit" class="pure-button pure-button-error pure-button-small">Delete</button>
             </div>
 
