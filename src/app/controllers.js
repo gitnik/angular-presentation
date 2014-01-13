@@ -3,11 +3,10 @@ controller('NavBarController', ['$scope', function($scope) {
     $scope.name = "dummy";
 }]).
 controller('ToDoController', ['$scope', function($scope) {
-    $scope.tasks = [
-        { name: "Task1", done: false },
-        { name: "Task2", done: false },
-        { name: "Task3", done: false }
-    ];
+
+    $http.get('app/tasks.json').success(function(data) {
+        $scope.tasks = data;
+    });;
 
     $scope.addNewTask = function() {
         $scope.tasks.push({name: " ", done: false});
@@ -19,7 +18,6 @@ controller('ToDoController', ['$scope', function($scope) {
 
     $scope.filteredTasks = function () {
         return $scope.tasks.map(function (task) {
-            console.log(task);
             if (!task.done)
                 return task;
         });
