@@ -36,7 +36,7 @@ controller('CurrencyConverterController', ['$scope', '$http', function($scope, $
     );
 
     $scope.getExchangeRate = function() {
-        var exchangeRate = that.exchangeData[rate];
+        var exchangeRate = that.exchangeData.rate;
 
         // round to the 4th decimal
         return Math.round(
