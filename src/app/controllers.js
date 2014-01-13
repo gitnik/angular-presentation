@@ -3,12 +3,27 @@ controller('NavBarController', ['$scope', function($scope) {
     $scope.name = "dummy";
 }]).
 controller('ToDoController', ['$scope', function($scope) {
-    $scope.tasks = ['Task1', "Task2", "Task3"];
+    $scope.tasks = [
+        { name: "Task1", done: false },
+        { name: "Task2", done: false },
+        { name: "Task3", done: false }
+    ];
 
     $scope.addNewTask = function() {
         $scope.tasks.push(" ");
-        console.log($scope.tasks);
     }
+
+    $scope.deleteTask = function(task) {
+        var taskIndex = $scope.tasks.indexOf(task);
+        $scope.tasks.slice(taskIndex, taskIndex+1);
+    }
+
+    /*$scope.filteredTasks = function () {
+        return $scope.tasks.map(function (task) {
+            if (!task.done)
+                return task;
+        });
+    }*/
 }]).
 controller('CurrencyConverterController', ['$scope', function($scope) {
 
