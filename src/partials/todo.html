@@ -3,9 +3,9 @@
         <fieldset>
             <legend>A sample ToDo app</legend>
 
-            <div>{{ tasks.length }} tasks</div>
+            <div>{{ (tasks | filter:filteredTasks()).length }} tasks</div>
 
-            <div ng-repeat="task in tasks track by $index | filter:filteredTasks()">
+            <div ng-repeat="task in filteredTasks() track by $index">
                 <input type="text" placeholder="{{ task.name }}"><button type="submit" class="pure-button pure-button-error pure-button-small" ng-click="deleteTask(task)">Delete</button>
             </div>
 

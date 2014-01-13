@@ -10,11 +10,12 @@ controller('ToDoController', ['$scope', function($scope) {
     ];
 
     $scope.addNewTask = function() {
-        $scope.tasks.push(" ");
+        $scope.tasks.push({name: " ", done: false});
     }
 
     $scope.deleteTask = function(task) {
         task.done = true;
+        console.log($scope.tasks);
     }
 
     $scope.filteredTasks = function () {
