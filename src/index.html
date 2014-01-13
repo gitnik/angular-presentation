@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="SampleApp">
+<head>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.3.0/pure-min.css">
+    <link rel="stylesheet" href="http://purecss.io/combo/1.8.2?/css/layouts/side-menu.css">
+</head>
+
+<body class="layout">
+    <!-- Menu toggle -->
+    <a href="#menu" id="menuLink" class="menu-link">
+        <!-- Hamburger icon -->
+        <span></span>
+    </a>
+    <div id="menu" ng-controller="NavbarController">
+        <div class="pure-menu pure-menu-open">
+            <a class="pure-menu-heading" href="#index">DummyPage</a>
+
+            <ul>
+                <li><a href="#dummy-link-1">Sample ToDo app</a></li>
+                <li><a href="#dummy-link-2">Sample Currency<br>Converter</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="main" ng-view></div>
+
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.8/angular.js"></script>
+    <script type="text/javascript" src="http://code.angularjs.org/1.2.8/angular-route.js"></script>
+
+    <script type="text/javascript" src="app/ui.js"></script>
+
+    <script type="text/javascript" src="app/app.js"></script>
+    <script type="text/javascript" src="app/controllers.js"></script>
+    <script type="text/javascript" src="app/factories.js"></script>
+    <script type="text/javascript" src="app/filters.js"></script>
+</body>
+</html>
