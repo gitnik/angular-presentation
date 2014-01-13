@@ -14,16 +14,15 @@ controller('ToDoController', ['$scope', function($scope) {
     }
 
     $scope.deleteTask = function(task) {
-        var taskIndex = $scope.tasks.indexOf(task);
-        $scope.tasks.slice(taskIndex, taskIndex+1);
+        task.done = true;
     }
 
-    /*$scope.filteredTasks = function () {
+    $scope.filteredTasks = function () {
         return $scope.tasks.map(function (task) {
             if (!task.done)
                 return task;
         });
-    }*/
+    }
 }]).
 controller('CurrencyConverterController', ['$scope', function($scope) {
 
