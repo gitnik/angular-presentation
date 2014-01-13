@@ -14,7 +14,7 @@ service('ToDoItems',['$http', '$q', function($http, $q) {
 }]).
 service('CurrencyExchangeData', ['$http', '$q', function($http, $q) {
 
-    var get = function() {
+    var getData = function() {
 
         var deffered = $q.defer();
 

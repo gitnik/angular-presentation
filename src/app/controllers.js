@@ -26,7 +26,7 @@ controller('ToDoController', ['$scope', 'ToDoItems', function($scope, ToDoItems)
 }]).
 controller('CurrencyConverterController', ['$scope', 'CurrencyExchangeData', function($scope, CurrencyExchangeData) {
 
-    var ratePromise = CurrencyExchangeData.get();
+    var ratePromise = CurrencyExchangeData.getData();
     ratePromise.then(function(data) {
         $scope.exchangeData = data;
     })
