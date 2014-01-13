@@ -2,9 +2,9 @@ angular.module('SampleApp.controllers', []).
 controller('NavBarController', ['$scope', function($scope) {
     $scope.name = "dummy";
 }]).
-controller('ToDoController', function($scope) {
+controller('ToDoController', ['$scope', function($scope) {
 
-}).
-controller('CurrencyConverterController', function($scope) {
+}]).
+controller('CurrencyConverterController', ['$scope', function($scope) {
 
-});
+}]);
