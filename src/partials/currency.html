@@ -7,12 +7,12 @@
 
             <div class="pure-control-group">
                 <label for="eur">EUR: </label>
-                <input id="eur" type="text" placeholder="€">
+                <input id="eur" type="text" ng-model="euro" placeholder="1" value="{{ usd * getExchangeRate }}">
             </div>
 
             <div class="pure-control-group">
                 <label for="usd">USD: </label>
-                <input id="usd" type="text" placeholder="$">
+                <input id="usd" type="text" ng-model="usd" placeholder="1">
             </div>
         </fieldset>
     </form>
