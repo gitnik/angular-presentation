@@ -4,6 +4,10 @@ controller('NavBarController', ['$scope', function($scope) {
 }]).
 controller('ToDoController', ['$scope', function($scope) {
     $scope.tasks = ['Task1', "Task2", "Task3"];
+
+    $scope.addNewTask = function() {
+        $scope.tasks.push("");
+    }
 }]).
 controller('CurrencyConverterController', ['$scope', function($scope) {
 

@@ -3,12 +3,14 @@
         <fieldset>
             <legend>A sample ToDo app</legend>
 
+            <div>{{ tasks.length }} tasks</div>
+            
             <div ng-repeat="task in tasks">
-                <input type="text" placeholder="task"><button type="submit" class="pure-button pure-button-error">Delete</button>
+                <input type="text" placeholder="{{ task }}"><button type="submit" class="pure-button pure-button-error">Delete</button>
             </div>
 
             <button type="submit" class="pure-button pure-button-primary">Save</button>
-            <button type="submit" class="pure-button pure-button-primary">New Task</button>
+            <button type="submit" class="pure-button pure-button-primary" ng-click="addNewTask">New Task</button>
         </fieldset>
     </form>
 </div>
