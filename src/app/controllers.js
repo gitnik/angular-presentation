@@ -45,9 +45,9 @@ controller('CurrencyConverterController', ['$scope', 'CurrencyExchangeData', fun
 
     $scope.calculate = function(currency) {
         if(currency == 'usd') {
-            $scope.usd = $scope.eur * $scope.getExchangeRate();
+            $scope.usd = $scope.eur * parseFloat((1/$scope.getExchangeRate()));
         } else if (currency == 'eur') {
-            $scope.eur = $scope.usd * parseFloat((1/$scope.getExchangeRate()));
+            $scope.eur = $scope.usd * $scope.getExchangeRate();
         }
     }
 }]);
