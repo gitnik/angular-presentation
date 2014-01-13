@@ -24,7 +24,7 @@ factory('CurrencyExchangeData', ['$http', '$q', function($http, $q) {
 
         var deffered = $q.defer();
 
-        $http.jsonp('http://rate-exchange.appspot.com/currency?from=USD&to=EUR').success(function(data) {
+        $http.jsonp('http://rate-exchange.appspot.com/currency?from=USD&to=EUR?callback=JSON_CALLBACK').success(function(data) {
             deffered.resolve(JSON.parse("'" + data + "'"));
         });
 
