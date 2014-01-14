@@ -13,7 +13,7 @@ describe('CurrencyConverterController', function() {
             $controller = $injector.get('$controller');
             createController = function() {
                 return $controller('CurrencyConverterController', {
-                    '$scope': $rootScope,
+                    '$scope': $scope,
                     'CurrencyExchangeData': CurrencyExchangeData
                 })
             };
@@ -24,6 +24,7 @@ describe('CurrencyConverterController', function() {
 
     it('should have the correct attributes',  function() {
         var controller = createController();
+        console.log($scope);
         expect($scope.getExchangeRate()).toBe('0.7323');
     });
 });
