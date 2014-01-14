@@ -17,6 +17,6 @@ describe('CurrencyConverterController', function() {
     );
 
     it('should have the correct attributes',  function() {
-            expect(controller.getExchangeRate()).toBe('0.7323');
+        expect(CurrencyExchangeData.getData()).toBe('0.7323');
     });
 });
