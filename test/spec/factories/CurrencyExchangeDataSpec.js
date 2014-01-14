@@ -5,9 +5,10 @@ describe('CurrencyExchangeData', function() {
    }));
 
    it('should have a getData() function', inject(function(CurrencyExchangeData){
-       expect(CurrencyExchangeData.getAll()).toBeDefined();
+       expect(CurrencyExchangeData.getData()).toBeDefined();
    }));
 
    //it('should return the json file')
 
 });
+Cur
