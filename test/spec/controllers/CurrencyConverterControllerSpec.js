@@ -4,7 +4,7 @@ describe('CurrencyConverterController', function() {
             var deferred = $q.defer();
             deferred.resolve('{"to": "EUR", "rate": 0.73236699999999999, "from": "USD"}');
 
-            spyOn(CurrencyExchangeData, 'getData').andReturn(deferred.promise);
+            spyOn(CurrencyExchangeData, 'getData').and.returnValue(deferred.promise);
         })
     );
 
