@@ -8,7 +8,7 @@ describe('CurrencyConverterController', function() {
             CurrencyExchangeData = $injector.get('CurrencyExchangeData');
 
             $rootScope = $injector.get('$rootScope');
-            $scope = $rootScope.new();
+            $scope = $rootScope.$new();
 
             $controller = $injector.get('$controller');
             createController = function() {
