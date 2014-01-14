@@ -11,4 +11,3 @@ describe('CurrencyExchangeData', function() {
    //it('should return the json file')
 
 });
-Cur
