@@ -1,15 +1,5 @@
 describe('CurrencyExchangeData', function() {
 
-    beforeEach(
-        inject(function(CurrencyExchangeData, $q) {
-            var deferred = $q.defer();
-            deffered.resolve('{"to": "EUR", "rate": 0.73236699999999999, "from": "USD"}');
-
-
-
-        })
-    );
-
    it('should exist', inject(function(CurrencyExchangeData) {
        expect(CurrencyExchangeData).toBeDefined();
    }));
@@ -18,6 +8,6 @@ describe('CurrencyExchangeData', function() {
        expect(CurrencyExchangeData.getAll()).toBeDefined();
    }));
 
-   it('should return the json file')
+   //it('should return the json file')
 
 });
