@@ -1,6 +1,6 @@
 describe('CurrencyConverterController', function() {
 
-    var controller, $rootScope, CurrencyExchangeData;
+    var $rootScope, CurrencyExchangeData, createController;
     beforeEach(
         inject(function($injector, $q) {
             var deferred = $q.defer();
@@ -10,14 +10,20 @@ describe('CurrencyConverterController', function() {
 
             $rootScope = $injector.get('$rootScope');
 
-            controller = $injector.get('CurrencyConverterController');
+            $controller = $injector.get('$controller');
+
+            createController = function() {
+                return $controller('CurrencyConverterController', {
+                    '$scope': $rootScope
+                })
+            };
 
             spyOn(CurrencyExchangeData, 'getData').and.returnValue(deferred.promise);
         })
     );
 
     it('should have the correct attributes',  function() {
-        console.log(CurrencyExchangeData.getData());
-        expect(CurrencyExchangeData.getData()).toBe('0.7323');
+        var controller = createController();
+        expect(controller.getExchangeRate()).toBe('0.7323');
     });
 });
