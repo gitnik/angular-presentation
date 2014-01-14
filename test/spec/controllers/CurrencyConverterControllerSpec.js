@@ -3,8 +3,8 @@ describe('CurrencyConverterController', function() {
     var $scope, CurrencyExchangeData, createController;
     beforeEach(
         inject(function($injector, $q) {
-            var deferred = $q.defer();
-            deferred.resolve('{"to": "EUR", "rate": 0.73236699999999999, "from": "USD"}');
+            //var deferred = $q.defer();
+            //deferred.resolve('{"to": "EUR", "rate": 0.73236699999999999, "from": "USD"}');
             CurrencyExchangeData = $injector.get('CurrencyExchangeData');
 
             $rootScope = $injector.get('$rootScope');
@@ -18,7 +18,7 @@ describe('CurrencyConverterController', function() {
                 })
             };
 
-            spyOn(CurrencyExchangeData, 'getData').and.returnValue(deferred.promise);
+            //spyOn(CurrencyExchangeData, 'getData').and.returnValue(deferred.promise);
         })
     );
 
