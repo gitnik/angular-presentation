@@ -13,7 +13,8 @@ describe('CurrencyConverterController', function() {
             $controller = $injector.get('$controller');
             createController = function() {
                 return $controller('CurrencyConverterController', {
-                    '$scope': $rootScope
+                    '$scope': $rootScope,
+                    'CurrencyExchangeData': CurrencyExchangeData
                 })
             };
 
