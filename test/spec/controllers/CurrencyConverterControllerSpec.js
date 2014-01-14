@@ -17,7 +17,7 @@ describe('CurrencyConverterController', function() {
     );
 
     it('should have the correct attributes',
-        inject(function() {
+        inject(function(controller) {
             expect(controller.getExchangeRate()).toBe('0.7323');
         })
     );
