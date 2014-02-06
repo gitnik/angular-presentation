@@ -1,13 +1,13 @@
 angular.module('SampleApp.controllers', []).
 controller('NavBarController', ['$scope', function($scope) {
     $scope.name = "dummy";
-}]).
-controller('ToDoController', ['$scope', 'ToDoItems', function($scope, ToDoItems) {
+}])
+.controller('ToDoController', ['$scope', 'ToDoItems', function($scope, ToDoItems) {
 
     var ToDoItemsPromise = ToDoItems.getAll();
     ToDoItemsPromise.then(function(tasks) {
         $scope.tasks = tasks;
-    })
+    });
 
     $scope.addNewTask = function() {
         $scope.tasks.push({name: " ", done: false});

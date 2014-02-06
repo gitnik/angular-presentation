@@ -15,17 +15,9 @@ describe('CurrencyExchangeData', function() {
     );
 
     afterEach(function () {
-        //$httpBackend.verifyNoOutstandingRequest();
-        //$httpBackend.verifyNoOutstandingExpectation();
+        $httpBackend.verifyNoOutstandingRequest();
+        $httpBackend.verifyNoOutstandingExpectation();
     });
-
-   it('should exist', function() {
-       expect(CurrencyExchangeData).toBeDefined();
-   });
-
-   it('should have a getData() function', function(){
-       expect(CurrencyExchangeData.getData()).toBeDefined();
-   });
 
    it('should return the correct response', function() {
        var data;
